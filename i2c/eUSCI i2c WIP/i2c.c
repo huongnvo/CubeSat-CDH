@@ -65,11 +65,11 @@ uint8_t *i2cRead(uint16_t address, uint16_t registery, uint16_t numOfBytes) {
 	sequence[3] = (address << 1) | 1;
 	uint16_t i;
 	for (i = 0x00; i < numOfBytes; i++) {
-		sequence[(int)i] = I2C_READ;
+		sequence[i] = I2C_READ;
 	}
 
 	uint8_t * RXData;
-	RXData = malloc((int)(numOfBytes) * sizeof(uint16_t));
+	RXData = malloc((int)(numOfBytes) * sizeof(uint8_t));
 
 	i2c_send_sequence(sequence, sequence_length, RXData, LPM0_bits);
 
@@ -83,7 +83,7 @@ void i2cWrite(uint16_t address, uint16_t registery, uint16_t data) {
 
 	uint16_t sequence_length = 0x03;
 	uint16_t * sequence;
-	sequence = malloc(sizeof(uint16_t)*(3));
+	sequence = malloc(sizeof(uint16_t)*(4));
 	sequence[0] = (address << 1);
 	sequence[1] = registery;
 	sequence[2] = data;
@@ -93,12 +93,13 @@ void i2cWrite(uint16_t address, uint16_t registery, uint16_t data) {
 	printf("%u \n", sequence[1]);
 	printf("%u \n", sequence[2]);
 	printf("%u \n", sequence[3]);
-	uint8_t * TXData;
-	TXData = malloc(sizeof(uint16_t));
 
-	i2c_send_sequence(sequence, sequence_length, TXData, LPM0_bits);
+	uint8_t * RXData;
+	RXData = malloc(sizeof(uint8_t));
 
-	free(TXData);
+	i2c_send_sequence(sequence, sequence_length, RXData, LPM0_bits);
+
+	free(RXData);
 	free(sequence);
 }
 
