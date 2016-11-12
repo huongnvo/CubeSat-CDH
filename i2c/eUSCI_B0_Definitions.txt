@@ -1,0 +1,686 @@
+/*****************************************************************************
+ eUSCI_B0 Registers
+*****************************************************************************/
+
+#define __MSP430_HAS_EUSCI_B0__               /* Definition to show that module is available */
+#ifndef __MSP430_HAS_EUSCI_Bx__
+#define __MSP430_HAS_EUSCI_Bx__
+#endif
+#define __MSP430_BASEADDRESS_EUSCI_B0__ 0x0640
+#define EUSCI_B0_BASE          __MSP430_BASEADDRESS_EUSCI_B0__
+
+SFR_16BIT(UCB0CTLW0);                                    /* eUSCI_Bx Control Word Register 0 */
+SFR_8BIT(UCB0CTLW0_L);
+SFR_8BIT(UCB0CTLW0_H);
+SFR_16BIT(UCB0CTLW1);                                    /* eUSCI_Bx Control Word Register 1 */
+SFR_8BIT(UCB0CTLW1_L);
+SFR_8BIT(UCB0CTLW1_H);
+SFR_16BIT(UCB0BRW);                                      /* eUSCI_Bx Baud Rate Control Word Register */
+SFR_8BIT(UCB0BRW_L);
+SFR_8BIT(UCB0BRW_H);
+SFR_16BIT(UCB0STATW);                                    /* eUSCI_Bx Status Register */
+SFR_8BIT(UCB0STATW_L);
+SFR_8BIT(UCB0STATW_H);
+SFR_16BIT(UCB0TBCNT);                                    /* eUSCI_Bx Byte Counter Threshold Register */
+SFR_8BIT(UCB0TBCNT_L);
+SFR_8BIT(UCB0TBCNT_H);
+SFR_16BIT(UCB0RXBUF);                                    /* eUSCI_Bx Receive Buffer Register */
+SFR_8BIT(UCB0RXBUF_L);
+SFR_8BIT(UCB0RXBUF_H);
+SFR_16BIT(UCB0TXBUF);                                    /* eUSCI_Bx Transmit Buffer Register */
+SFR_8BIT(UCB0TXBUF_L);
+SFR_8BIT(UCB0TXBUF_H);
+SFR_16BIT(UCB0I2COA0);                                   /* eUSCI_Bx I2C Own Address 0 Register */
+SFR_8BIT(UCB0I2COA0_L);
+SFR_8BIT(UCB0I2COA0_H);
+SFR_16BIT(UCB0I2COA1);                                   /* eUSCI_Bx I2C Own Address 1 Register */
+SFR_8BIT(UCB0I2COA1_L);
+SFR_8BIT(UCB0I2COA1_H);
+SFR_16BIT(UCB0I2COA2);                                   /* eUSCI_Bx I2C Own Address 2 Register */
+SFR_8BIT(UCB0I2COA2_L);
+SFR_8BIT(UCB0I2COA2_H);
+SFR_16BIT(UCB0I2COA3);                                   /* eUSCI_Bx I2C Own Address 3 Register */
+SFR_8BIT(UCB0I2COA3_L);
+SFR_8BIT(UCB0I2COA3_H);
+SFR_16BIT(UCB0ADDRX);                                    /* eUSCI_Bx I2C Received Address Register */
+SFR_8BIT(UCB0ADDRX_L);
+SFR_8BIT(UCB0ADDRX_H);
+SFR_16BIT(UCB0ADDMASK);                                  /* eUSCI_Bx I2C Address Mask Register */
+SFR_8BIT(UCB0ADDMASK_L);
+SFR_8BIT(UCB0ADDMASK_H);
+SFR_16BIT(UCB0I2CSA);                                    /* eUSCI_Bx I2C Slave Address Register */
+SFR_8BIT(UCB0I2CSA_L);
+SFR_8BIT(UCB0I2CSA_H);
+SFR_16BIT(UCB0IE);                                       /* eUSCI_Bx Interrupt Enable Register */
+SFR_8BIT(UCB0IE_L);
+SFR_8BIT(UCB0IE_H);
+SFR_16BIT(UCB0IFG);                                      /* eUSCI_Bx Interrupt Flag Register */
+SFR_8BIT(UCB0IFG_L);
+SFR_8BIT(UCB0IFG_H);
+SFR_16BIT(UCB0IV);                                       /* eUSCI_Bx Interrupt Vector Register */
+SFR_8BIT(UCB0IV_L);
+SFR_8BIT(UCB0IV_H);
+
+/* eUSCI_B0 Register Offsets */
+#define OFS_UCB0CTLW0                    (0x0000)
+#define OFS_UCB0CTLW0_L                  OFS_UCB0CTLW0
+#define OFS_UCB0CTLW0_H                  OFS_UCB0CTLW0+1
+#define OFS_UCB0CTLW1                    (0x0002)
+#define OFS_UCB0CTLW1_L                  OFS_UCB0CTLW1
+#define OFS_UCB0CTLW1_H                  OFS_UCB0CTLW1+1
+#define OFS_UCB0BRW                      (0x0006)
+#define OFS_UCB0BRW_L                    OFS_UCB0BRW
+#define OFS_UCB0BRW_H                    OFS_UCB0BRW+1
+#define OFS_UCB0STATW                    (0x0008)
+#define OFS_UCB0STATW_L                  OFS_UCB0STATW
+#define OFS_UCB0STATW_H                  OFS_UCB0STATW+1
+#define OFS_UCB0TBCNT                    (0x000A)
+#define OFS_UCB0TBCNT_L                  OFS_UCB0TBCNT
+#define OFS_UCB0TBCNT_H                  OFS_UCB0TBCNT+1
+#define OFS_UCB0RXBUF                    (0x000C)
+#define OFS_UCB0RXBUF_L                  OFS_UCB0RXBUF
+#define OFS_UCB0RXBUF_H                  OFS_UCB0RXBUF+1
+#define OFS_UCB0TXBUF                    (0x000E)
+#define OFS_UCB0TXBUF_L                  OFS_UCB0TXBUF
+#define OFS_UCB0TXBUF_H                  OFS_UCB0TXBUF+1
+#define OFS_UCB0I2COA0                   (0x0014)
+#define OFS_UCB0I2COA0_L                 OFS_UCB0I2COA0
+#define OFS_UCB0I2COA0_H                 OFS_UCB0I2COA0+1
+#define OFS_UCB0I2COA1                   (0x0016)
+#define OFS_UCB0I2COA1_L                 OFS_UCB0I2COA1
+#define OFS_UCB0I2COA1_H                 OFS_UCB0I2COA1+1
+#define OFS_UCB0I2COA2                   (0x0018)
+#define OFS_UCB0I2COA2_L                 OFS_UCB0I2COA2
+#define OFS_UCB0I2COA2_H                 OFS_UCB0I2COA2+1
+#define OFS_UCB0I2COA3                   (0x001A)
+#define OFS_UCB0I2COA3_L                 OFS_UCB0I2COA3
+#define OFS_UCB0I2COA3_H                 OFS_UCB0I2COA3+1
+#define OFS_UCB0ADDRX                    (0x001C)
+#define OFS_UCB0ADDRX_L                  OFS_UCB0ADDRX
+#define OFS_UCB0ADDRX_H                  OFS_UCB0ADDRX+1
+#define OFS_UCB0ADDMASK                  (0x001E)
+#define OFS_UCB0ADDMASK_L                OFS_UCB0ADDMASK
+#define OFS_UCB0ADDMASK_H                OFS_UCB0ADDMASK+1
+#define OFS_UCB0I2CSA                    (0x0020)
+#define OFS_UCB0I2CSA_L                  OFS_UCB0I2CSA
+#define OFS_UCB0I2CSA_H                  OFS_UCB0I2CSA+1
+#define OFS_UCB0IE                       (0x002A)
+#define OFS_UCB0IE_L                     OFS_UCB0IE
+#define OFS_UCB0IE_H                     OFS_UCB0IE+1
+#define OFS_UCB0IFG                      (0x002C)
+#define OFS_UCB0IFG_L                    OFS_UCB0IFG
+#define OFS_UCB0IFG_H                    OFS_UCB0IFG+1
+#define OFS_UCB0IV                       (0x002E)
+#define OFS_UCB0IV_L                     OFS_UCB0IV
+#define OFS_UCB0IV_H                     OFS_UCB0IV+1
+
+/* eUSCI_B0 Control Bits */
+
+/* UCB0CTLW0 Control Bits */
+#define UCTXSTT                          (0x0002)        /* Transmit START condition in master mode */
+#define UCTXSTT_L                        (0x0002)
+#define UCTXSTT_0                        (0x0000)        /* Do not generate START condition */
+#define UCTXSTT_1                        (0x0002)        /* Generate START condition */
+#define UCTXSTT_1_L                      (0x0002)
+#define UCTXSTP                          (0x0004)        /* Transmit STOP condition in master mode */
+#define UCTXSTP_L                        (0x0004)
+#define UCTXSTP_0                        (0x0000)        /* No STOP generated */
+#define UCTXSTP_1                        (0x0004)        /* Generate STOP */
+#define UCTXSTP_1_L                      (0x0004)
+#define UCTXNACK                         (0x0008)        /* Transmit a NACK */
+#define UCTXNACK_L                       (0x0008)
+#define UCTXNACK_0                       (0x0000)        /* Acknowledge normally */
+#define UCTXNACK_1                       (0x0008)        /* Generate NACK */
+#define UCTXNACK_1_L                     (0x0008)
+#define UCTR                             (0x0010)        /* Transmitter/receiver */
+#define UCTR_L                           (0x0010)
+#define UCTR_0                           (0x0000)        /* Receiver */
+#define UCTR_1                           (0x0010)        /* Transmitter */
+#define UCTR_1_L                         (0x0010)
+#define UCTR__RX                         (0x0000)        /* Receiver */
+#define UCTR__TX                         (0x0010)        /* Transmitter */
+#define UCTR__TX_L                       (0x0010)
+#define UCTXACK                          (0x0020)        /* Transmit ACK condition in slave mode */
+#define UCTXACK_L                        (0x0020)
+#define UCTXACK_0                        (0x0000)        /* Do not acknowledge the slave address */
+#define UCTXACK_1                        (0x0020)        /* Acknowledge the slave address */
+#define UCTXACK_1_L                      (0x0020)
+#define UCSSEL_3                         (0x00c0)        /* SMCLK */
+#define UCSSEL_3_L                       (0x00c0)
+#define UCSSEL__UCLKI                    (0x0000)        /* UCLKI */
+#define UCMM                             (0x2000)        /* Multi-master environment select */
+#define UCMM_H                           (0x0020)
+#define UCMM_0                           (0x0000)        /* Single master environment. There is no other master in the 
+                                                            system. The address compare unit is disabled. */
+#define UCMM_1                           (0x2000)        /* Multi-master environment */
+#define UCMM_1_H                         (0x0020)
+#define UCMM__SINGLE                     (0x0000)        /* Single master environment. There is no other master in the 
+                                                            system. The address compare unit is disabled. */
+#define UCMM__MULTI                      (0x2000)        /* Multi-master environment */
+#define UCMM__MULTI_H                    (0x0020)
+#define UCSLA10                          (0x4000)        /* Slave addressing mode select */
+#define UCSLA10_H                        (0x0040)
+#define UCSLA10_0                        (0x0000)        /* Address slave with 7-bit address */
+#define UCSLA10_1                        (0x4000)        /* Address slave with 10-bit address */
+#define UCSLA10_1_H                      (0x0040)
+#define UCSLA10__7BIT                    (0x0000)        /* Address slave with 7-bit address */
+#define UCSLA10__10BIT                   (0x4000)        /* Address slave with 10-bit address */
+#define UCSLA10__10BIT_H                 (0x0040)
+#define UCA10                            (0x8000)        /* Own addressing mode select */
+#define UCA10_H                          (0x0080)
+#define UCA10_0                          (0x0000)        /* Own address is a 7-bit address */
+#define UCA10_1                          (0x8000)        /* Own address is a 10-bit address */
+#define UCA10_1_H                        (0x0080)
+
+/* UCB0CTLW1 Control Bits */
+#define UCASTP                           (0x000c)        /* Automatic STOP condition generation */
+#define UCASTP_L                         (0x000c)
+#define UCASTP0                          (0x0004)        /* Automatic STOP condition generation */
+#define UCASTP0_L                        (0x0004)
+#define UCASTP1                          (0x0008)        /* Automatic STOP condition generation */
+#define UCASTP1_L                        (0x0008)
+#define UCASTP_0                         (0x0000)        /* No automatic STOP generation. The STOP condition is generated 
+                                                            after the user sets the UCTXSTP bit. The value in UCBxTBCNT is
+                                                            a don't care. */
+#define UCASTP_1                         (0x0004)        /* UCBCNTIFG is set with the byte counter reaches the threshold 
+                                                            defined in UCBxTBCNT */
+#define UCASTP_1_L                       (0x0004)
+#define UCASTP_2                         (0x0008)        /* A STOP condition is generated automatically after the byte 
+                                                            counter value reached UCBxTBCNT. UCBCNTIFG is set with the 
+                                                            byte counter reaching the threshold */
+#define UCASTP_2_L                       (0x0008)
+#define UCSWACK                          (0x0010)        /* SW or HW ACK control */
+#define UCSWACK_L                        (0x0010)
+#define UCSWACK_0                        (0x0000)        /* The address acknowledge of the slave is controlled by the 
+                                                            eUSCI_B module */
+#define UCSWACK_1                        (0x0010)        /* The user needs to trigger the sending of the address ACK by 
+                                                            issuing UCTXACK */
+#define UCSWACK_1_L                      (0x0010)
+#define UCSTPNACK                        (0x0020)        /* ACK all master bytes */
+#define UCSTPNACK_L                      (0x0020)
+#define UCSTPNACK_0                      (0x0000)        /* Send a non-acknowledge before the STOP condition as a master 
+                                                            receiver (conform to I2C standard) */
+#define UCSTPNACK_1                      (0x0020)        /* All bytes are acknowledged by the eUSCI_B when configured as 
+                                                            master receiver */
+#define UCSTPNACK_1_L                    (0x0020)
+#define UCCLTO                           (0x00c0)        /* Clock low timeout select */
+#define UCCLTO_L                         (0x00c0)
+#define UCCLTO0                          (0x0040)        /* Clock low timeout select */
+#define UCCLTO0_L                        (0x0040)
+#define UCCLTO1                          (0x0080)        /* Clock low timeout select */
+#define UCCLTO1_L                        (0x0080)
+#define UCCLTO_0                         (0x0000)        /* Disable clock low timeout counter */
+#define UCCLTO_1                         (0x0040)        /* 135 000 SYSCLK cycles (approximately 28 ms) */
+#define UCCLTO_1_L                       (0x0040)
+#define UCCLTO_2                         (0x0080)        /* 150 000 SYSCLK cycles (approximately 31 ms) */
+#define UCCLTO_2_L                       (0x0080)
+#define UCCLTO_3                         (0x00c0)        /* 165 000 SYSCLK cycles (approximately 34 ms) */
+#define UCCLTO_3_L                       (0x00c0)
+#define UCETXINT                         (0x0100)        /* Early UCTXIFG0 */
+#define UCETXINT_H                       (0x0001)
+#define UCETXINT_0                       (0x0000)        /* UCTXIFGx is set after an address match with UCxI2COAx and the 
+                                                            direction bit indicating slave transmit */
+#define UCETXINT_1                       (0x0100)        /* UCTXIFG0 is set for each START condition */
+#define UCETXINT_1_H                     (0x0001)
+
+/* UCB0STATW Control Bits */
+#define UCBBUSY                          (0x0010)        /* Bus busy */
+#define UCBBUSY_L                        (0x0010)
+#define UCBBUSY_0                        (0x0000)        /* Bus inactive */
+#define UCBBUSY_1                        (0x0010)        /* Bus busy */
+#define UCBBUSY_1_L                      (0x0010)
+#define UCBBUSY__IDLE                    (0x0000)        /* Bus inactive */
+#define UCBBUSY__BUSY                    (0x0010)        /* Bus busy */
+#define UCBBUSY__BUSY_L                  (0x0010)
+#define UCGC                             (0x0020)        /* General call address received */
+#define UCGC_L                           (0x0020)
+#define UCGC_0                           (0x0000)        /* No general call address received */
+#define UCGC_1                           (0x0020)        /* General call address received */
+#define UCGC_1_L                         (0x0020)
+#define UCSCLLOW                         (0x0040)        /* SCL low */
+#define UCSCLLOW_L                       (0x0040)
+#define UCSCLLOW_0                       (0x0000)        /* SCL is not held low */
+#define UCSCLLOW_1                       (0x0040)        /* SCL is held low */
+#define UCSCLLOW_1_L                     (0x0040)
+#define UCBCNT                           (0xff00)        /* Hardware byte counter value */
+#define UCBCNT_H                         (0x00ff)
+#define UCBCNT0                          (0x0100)        /* Hardware byte counter value */
+#define UCBCNT0_H                        (0x0001)
+#define UCBCNT1                          (0x0200)        /* Hardware byte counter value */
+#define UCBCNT1_H                        (0x0002)
+#define UCBCNT2                          (0x0400)        /* Hardware byte counter value */
+#define UCBCNT2_H                        (0x0004)
+#define UCBCNT3                          (0x0800)        /* Hardware byte counter value */
+#define UCBCNT3_H                        (0x0008)
+#define UCBCNT4                          (0x1000)        /* Hardware byte counter value */
+#define UCBCNT4_H                        (0x0010)
+#define UCBCNT5                          (0x2000)        /* Hardware byte counter value */
+#define UCBCNT5_H                        (0x0020)
+#define UCBCNT6                          (0x4000)        /* Hardware byte counter value */
+#define UCBCNT6_H                        (0x0040)
+#define UCBCNT7                          (0x8000)        /* Hardware byte counter value */
+#define UCBCNT7_H                        (0x0080)
+
+/* UCB0TBCNT Control Bits */
+#define UCTBCNT                          (0x00ff)        /* Byte counter threshold value */
+#define UCTBCNT_L                        (0x00ff)
+#define UCTBCNT0                         (0x0001)        /* Byte counter threshold value */
+#define UCTBCNT0_L                       (0x0001)
+#define UCTBCNT1                         (0x0002)        /* Byte counter threshold value */
+#define UCTBCNT1_L                       (0x0002)
+#define UCTBCNT2                         (0x0004)        /* Byte counter threshold value */
+#define UCTBCNT2_L                       (0x0004)
+#define UCTBCNT3                         (0x0008)        /* Byte counter threshold value */
+#define UCTBCNT3_L                       (0x0008)
+#define UCTBCNT4                         (0x0010)        /* Byte counter threshold value */
+#define UCTBCNT4_L                       (0x0010)
+#define UCTBCNT5                         (0x0020)        /* Byte counter threshold value */
+#define UCTBCNT5_L                       (0x0020)
+#define UCTBCNT6                         (0x0040)        /* Byte counter threshold value */
+#define UCTBCNT6_L                       (0x0040)
+#define UCTBCNT7                         (0x0080)        /* Byte counter threshold value */
+#define UCTBCNT7_L                       (0x0080)
+
+/* UCB0I2COA0 Control Bits */
+#define I2COA0                           (0x03ff)        /* I2C own address */
+#define I2COA0_L                         (0x00ff)
+#define I2COA0_H                         (0x0003)
+#define I2COA00                          (0x0001)        /* I2C own address */
+#define I2COA00_L                        (0x0001)
+#define I2COA01                          (0x0002)        /* I2C own address */
+#define I2COA01_L                        (0x0002)
+#define I2COA02                          (0x0004)        /* I2C own address */
+#define I2COA02_L                        (0x0004)
+#define I2COA03                          (0x0008)        /* I2C own address */
+#define I2COA03_L                        (0x0008)
+#define I2COA04                          (0x0010)        /* I2C own address */
+#define I2COA04_L                        (0x0010)
+#define I2COA05                          (0x0020)        /* I2C own address */
+#define I2COA05_L                        (0x0020)
+#define I2COA06                          (0x0040)        /* I2C own address */
+#define I2COA06_L                        (0x0040)
+#define I2COA07                          (0x0080)        /* I2C own address */
+#define I2COA07_L                        (0x0080)
+#define I2COA08                          (0x0100)        /* I2C own address */
+#define I2COA08_H                        (0x0001)
+#define I2COA09                          (0x0200)        /* I2C own address */
+#define I2COA09_H                        (0x0002)
+#define UCOAEN                           (0x0400)        /* Own Address enable register */
+#define UCOAEN_H                         (0x0004)
+#define UCOAEN_0                         (0x0000)        /* The slave address defined in I2COA0 is disabled */
+#define UCOAEN_1                         (0x0400)        /* The slave address defined in I2COA0 is enabled */
+#define UCOAEN_1_H                       (0x0004)
+#define UCOAEN__DISABLE                  (0x0000)        /* The slave address defined in I2COA0 is disabled */
+#define UCOAEN__ENABLE                   (0x0400)        /* The slave address defined in I2COA0 is enabled */
+#define UCOAEN__ENABLE_H                 (0x0004)
+#define UCGCEN                           (0x8000)        /* General call response enable */
+#define UCGCEN_H                         (0x0080)
+#define UCGCEN_0                         (0x0000)        /* Do not respond to a general call */
+#define UCGCEN_1                         (0x8000)        /* Respond to a general call */
+#define UCGCEN_1_H                       (0x0080)
+
+/* UCB0I2COA1 Control Bits */
+#define I2COA1                           (0x03ff)        /* I2C own address */
+#define I2COA1_L                         (0x00ff)
+#define I2COA1_H                         (0x0003)
+#define I2COA10                          (0x0001)        /* I2C own address */
+#define I2COA10_L                        (0x0001)
+#define I2COA11                          (0x0002)        /* I2C own address */
+#define I2COA11_L                        (0x0002)
+#define I2COA12                          (0x0004)        /* I2C own address */
+#define I2COA12_L                        (0x0004)
+#define I2COA13                          (0x0008)        /* I2C own address */
+#define I2COA13_L                        (0x0008)
+#define I2COA14                          (0x0010)        /* I2C own address */
+#define I2COA14_L                        (0x0010)
+#define I2COA15                          (0x0020)        /* I2C own address */
+#define I2COA15_L                        (0x0020)
+#define I2COA16                          (0x0040)        /* I2C own address */
+#define I2COA16_L                        (0x0040)
+#define I2COA17                          (0x0080)        /* I2C own address */
+#define I2COA17_L                        (0x0080)
+#define I2COA18                          (0x0100)        /* I2C own address */
+#define I2COA18_H                        (0x0001)
+#define I2COA19                          (0x0200)        /* I2C own address */
+#define I2COA19_H                        (0x0002)
+
+/* UCB0I2COA2 Control Bits */
+#define I2COA2                           (0x03ff)        /* I2C own address */
+#define I2COA2_L                         (0x00ff)
+#define I2COA2_H                         (0x0003)
+#define I2COA20                          (0x0001)        /* I2C own address */
+#define I2COA20_L                        (0x0001)
+#define I2COA21                          (0x0002)        /* I2C own address */
+#define I2COA21_L                        (0x0002)
+#define I2COA22                          (0x0004)        /* I2C own address */
+#define I2COA22_L                        (0x0004)
+#define I2COA23                          (0x0008)        /* I2C own address */
+#define I2COA23_L                        (0x0008)
+#define I2COA24                          (0x0010)        /* I2C own address */
+#define I2COA24_L                        (0x0010)
+#define I2COA25                          (0x0020)        /* I2C own address */
+#define I2COA25_L                        (0x0020)
+#define I2COA26                          (0x0040)        /* I2C own address */
+#define I2COA26_L                        (0x0040)
+#define I2COA27                          (0x0080)        /* I2C own address */
+#define I2COA27_L                        (0x0080)
+#define I2COA28                          (0x0100)        /* I2C own address */
+#define I2COA28_H                        (0x0001)
+#define I2COA29                          (0x0200)        /* I2C own address */
+#define I2COA29_H                        (0x0002)
+
+/* UCB0I2COA3 Control Bits */
+#define I2COA3                           (0x03ff)        /* I2C own address */
+#define I2COA3_L                         (0x00ff)
+#define I2COA3_H                         (0x0003)
+#define I2COA30                          (0x0001)        /* I2C own address */
+#define I2COA30_L                        (0x0001)
+#define I2COA31                          (0x0002)        /* I2C own address */
+#define I2COA31_L                        (0x0002)
+#define I2COA32                          (0x0004)        /* I2C own address */
+#define I2COA32_L                        (0x0004)
+#define I2COA33                          (0x0008)        /* I2C own address */
+#define I2COA33_L                        (0x0008)
+#define I2COA34                          (0x0010)        /* I2C own address */
+#define I2COA34_L                        (0x0010)
+#define I2COA35                          (0x0020)        /* I2C own address */
+#define I2COA35_L                        (0x0020)
+#define I2COA36                          (0x0040)        /* I2C own address */
+#define I2COA36_L                        (0x0040)
+#define I2COA37                          (0x0080)        /* I2C own address */
+#define I2COA37_L                        (0x0080)
+#define I2COA38                          (0x0100)        /* I2C own address */
+#define I2COA38_H                        (0x0001)
+#define I2COA39                          (0x0200)        /* I2C own address */
+#define I2COA39_H                        (0x0002)
+
+/* UCB0ADDRX Control Bits */
+#define ADDRX                            (0x03ff)        /* Received Address Register */
+#define ADDRX_L                          (0x00ff)
+#define ADDRX_H                          (0x0003)
+#define ADDRX0                           (0x0001)        /* Received Address Register */
+#define ADDRX0_L                         (0x0001)
+#define ADDRX1                           (0x0002)        /* Received Address Register */
+#define ADDRX1_L                         (0x0002)
+#define ADDRX2                           (0x0004)        /* Received Address Register */
+#define ADDRX2_L                         (0x0004)
+#define ADDRX3                           (0x0008)        /* Received Address Register */
+#define ADDRX3_L                         (0x0008)
+#define ADDRX4                           (0x0010)        /* Received Address Register */
+#define ADDRX4_L                         (0x0010)
+#define ADDRX5                           (0x0020)        /* Received Address Register */
+#define ADDRX5_L                         (0x0020)
+#define ADDRX6                           (0x0040)        /* Received Address Register */
+#define ADDRX6_L                         (0x0040)
+#define ADDRX7                           (0x0080)        /* Received Address Register */
+#define ADDRX7_L                         (0x0080)
+#define ADDRX8                           (0x0100)        /* Received Address Register */
+#define ADDRX8_H                         (0x0001)
+#define ADDRX9                           (0x0200)        /* Received Address Register */
+#define ADDRX9_H                         (0x0002)
+
+/* UCB0ADDMASK Control Bits */
+#define ADDMASK                          (0x03ff)        /* */
+#define ADDMASK_L                        (0x00ff)
+#define ADDMASK_H                        (0x0003)
+#define ADDMASK0                         (0x0001)        /* */
+#define ADDMASK0_L                       (0x0001)
+#define ADDMASK1                         (0x0002)        /* */
+#define ADDMASK1_L                       (0x0002)
+#define ADDMASK2                         (0x0004)        /* */
+#define ADDMASK2_L                       (0x0004)
+#define ADDMASK3                         (0x0008)        /* */
+#define ADDMASK3_L                       (0x0008)
+#define ADDMASK4                         (0x0010)        /* */
+#define ADDMASK4_L                       (0x0010)
+#define ADDMASK5                         (0x0020)        /* */
+#define ADDMASK5_L                       (0x0020)
+#define ADDMASK6                         (0x0040)        /* */
+#define ADDMASK6_L                       (0x0040)
+#define ADDMASK7                         (0x0080)        /* */
+#define ADDMASK7_L                       (0x0080)
+#define ADDMASK8                         (0x0100)        /* */
+#define ADDMASK8_H                       (0x0001)
+#define ADDMASK9                         (0x0200)        /* */
+#define ADDMASK9_H                       (0x0002)
+
+/* UCB0I2CSA Control Bits */
+#define I2CSA                            (0x03ff)        /* I2C slave address */
+#define I2CSA_L                          (0x00ff)
+#define I2CSA_H                          (0x0003)
+#define I2CSA0                           (0x0001)        /* I2C slave address */
+#define I2CSA0_L                         (0x0001)
+#define I2CSA1                           (0x0002)        /* I2C slave address */
+#define I2CSA1_L                         (0x0002)
+#define I2CSA2                           (0x0004)        /* I2C slave address */
+#define I2CSA2_L                         (0x0004)
+#define I2CSA3                           (0x0008)        /* I2C slave address */
+#define I2CSA3_L                         (0x0008)
+#define I2CSA4                           (0x0010)        /* I2C slave address */
+#define I2CSA4_L                         (0x0010)
+#define I2CSA5                           (0x0020)        /* I2C slave address */
+#define I2CSA5_L                         (0x0020)
+#define I2CSA6                           (0x0040)        /* I2C slave address */
+#define I2CSA6_L                         (0x0040)
+#define I2CSA7                           (0x0080)        /* I2C slave address */
+#define I2CSA7_L                         (0x0080)
+#define I2CSA8                           (0x0100)        /* I2C slave address */
+#define I2CSA8_H                         (0x0001)
+#define I2CSA9                           (0x0200)        /* I2C slave address */
+#define I2CSA9_H                         (0x0002)
+
+/* UCB0IE Control Bits */
+#define UCRXIE0                          (0x0001)        /* Receive interrupt enable 0 */
+#define UCRXIE0_L                        (0x0001)
+#define UCRXIE0_0                        (0x0000)        /* Interrupt disabled */
+#define UCRXIE0_1                        (0x0001)        /* Interrupt enabled */
+#define UCRXIE0_1_L                      (0x0001)
+#define UCTXIE0                          (0x0002)        /* Transmit interrupt enable 0 */
+#define UCTXIE0_L                        (0x0002)
+#define UCTXIE0_0                        (0x0000)        /* Interrupt disabled */
+#define UCTXIE0_1                        (0x0002)        /* Interrupt enabled */
+#define UCTXIE0_1_L                      (0x0002)
+#define UCSTPIE                          (0x0008)        /* STOP condition interrupt enable */
+#define UCSTPIE_L                        (0x0008)
+#define UCSTPIE_0                        (0x0000)        /* Interrupt disabled */
+#define UCSTPIE_1                        (0x0008)        /* Interrupt enabled */
+#define UCSTPIE_1_L                      (0x0008)
+#define UCALIE                           (0x0010)        /* Arbitration lost interrupt enable */
+#define UCALIE_L                         (0x0010)
+#define UCALIE_0                         (0x0000)        /* Interrupt disabled */
+#define UCALIE_1                         (0x0010)        /* Interrupt enabled */
+#define UCALIE_1_L                       (0x0010)
+#define UCNACKIE                         (0x0020)        /* Not-acknowledge interrupt enable */
+#define UCNACKIE_L                       (0x0020)
+#define UCNACKIE_0                       (0x0000)        /* Interrupt disabled */
+#define UCNACKIE_1                       (0x0020)        /* Interrupt enabled */
+#define UCNACKIE_1_L                     (0x0020)
+#define UCBCNTIE                         (0x0040)        /* Byte counter interrupt enable */
+#define UCBCNTIE_L                       (0x0040)
+#define UCBCNTIE_0                       (0x0000)        /* Interrupt disabled */
+#define UCBCNTIE_1                       (0x0040)        /* Interrupt enabled */
+#define UCBCNTIE_1_L                     (0x0040)
+#define UCCLTOIE                         (0x0080)        /* Clock low timeout interrupt enable */
+#define UCCLTOIE_L                       (0x0080)
+#define UCCLTOIE_0                       (0x0000)        /* Interrupt disabled */
+#define UCCLTOIE_1                       (0x0080)        /* Interrupt enabled */
+#define UCCLTOIE_1_L                     (0x0080)
+#define UCRXIE1                          (0x0100)        /* Receive interrupt enable 1 */
+#define UCRXIE1_H                        (0x0001)
+#define UCRXIE1_0                        (0x0000)        /* Interrupt disabled */
+#define UCRXIE1_1                        (0x0100)        /* Interrupt enabled */
+#define UCRXIE1_1_H                      (0x0001)
+#define UCTXIE1                          (0x0200)        /* Transmit interrupt enable 1 */
+#define UCTXIE1_H                        (0x0002)
+#define UCTXIE1_0                        (0x0000)        /* Interrupt disabled */
+#define UCTXIE1_1                        (0x0200)        /* Interrupt enabled */
+#define UCTXIE1_1_H                      (0x0002)
+#define UCRXIE2                          (0x0400)        /* Receive interrupt enable 2 */
+#define UCRXIE2_H                        (0x0004)
+#define UCRXIE2_0                        (0x0000)        /* Interrupt disabled */
+#define UCRXIE2_1                        (0x0400)        /* Interrupt enabled */
+#define UCRXIE2_1_H                      (0x0004)
+#define UCTXIE2                          (0x0800)        /* Transmit interrupt enable 2 */
+#define UCTXIE2_H                        (0x0008)
+#define UCTXIE2_0                        (0x0000)        /* Interrupt disabled */
+#define UCTXIE2_1                        (0x0800)        /* Interrupt enabled */
+#define UCTXIE2_1_H                      (0x0008)
+#define UCRXIE3                          (0x1000)        /* Receive interrupt enable 3 */
+#define UCRXIE3_H                        (0x0010)
+#define UCRXIE3_0                        (0x0000)        /* Interrupt disabled */
+#define UCRXIE3_1                        (0x1000)        /* Interrupt enabled */
+#define UCRXIE3_1_H                      (0x0010)
+#define UCTXIE3                          (0x2000)        /* Transmit interrupt enable 3 */
+#define UCTXIE3_H                        (0x0020)
+#define UCTXIE3_0                        (0x0000)        /* Interrupt disabled */
+#define UCTXIE3_1                        (0x2000)        /* Interrupt enabled */
+#define UCTXIE3_1_H                      (0x0020)
+#define UCBIT9IE                         (0x4000)        /* Bit position 9 interrupt enable */
+#define UCBIT9IE_H                       (0x0040)
+#define UCBIT9IE_0                       (0x0000)        /* Interrupt disabled */
+#define UCBIT9IE_1                       (0x4000)        /* Interrupt enabled */
+#define UCBIT9IE_1_H                     (0x0040)
+
+/* UCB0IFG Control Bits */
+#define UCRXIFG0                         (0x0001)        /* eUSCI_B receive interrupt flag 0 */
+#define UCRXIFG0_L                       (0x0001)
+#define UCRXIFG0_0                       (0x0000)        /* No interrupt pending */
+#define UCRXIFG0_1                       (0x0001)        /* Interrupt pending */
+#define UCRXIFG0_1_L                     (0x0001)
+#define UCTXIFG0                         (0x0002)        /* eUSCI_B transmit interrupt flag 0 */
+#define UCTXIFG0_L                       (0x0002)
+#define UCTXIFG0_0                       (0x0000)        /* No interrupt pending */
+#define UCTXIFG0_1                       (0x0002)        /* Interrupt pending */
+#define UCTXIFG0_1_L                     (0x0002)
+#define UCSTPIFG                         (0x0008)        /* STOP condition interrupt flag */
+#define UCSTPIFG_L                       (0x0008)
+#define UCSTPIFG_0                       (0x0000)        /* No interrupt pending */
+#define UCSTPIFG_1                       (0x0008)        /* Interrupt pending */
+#define UCSTPIFG_1_L                     (0x0008)
+#define UCALIFG                          (0x0010)        /* Arbitration lost interrupt flag */
+#define UCALIFG_L                        (0x0010)
+#define UCALIFG_0                        (0x0000)        /* No interrupt pending */
+#define UCALIFG_1                        (0x0010)        /* Interrupt pending */
+#define UCALIFG_1_L                      (0x0010)
+#define UCNACKIFG                        (0x0020)        /* Not-acknowledge received interrupt flag */
+#define UCNACKIFG_L                      (0x0020)
+#define UCNACKIFG_0                      (0x0000)        /* No interrupt pending */
+#define UCNACKIFG_1                      (0x0020)        /* Interrupt pending */
+#define UCNACKIFG_1_L                    (0x0020)
+#define UCBCNTIFG                        (0x0040)        /* Byte counter interrupt flag */
+#define UCBCNTIFG_L                      (0x0040)
+#define UCBCNTIFG_0                      (0x0000)        /* No interrupt pending */
+#define UCBCNTIFG_1                      (0x0040)        /* Interrupt pending */
+#define UCBCNTIFG_1_L                    (0x0040)
+#define UCCLTOIFG                        (0x0080)        /* Clock low timeout interrupt flag */
+#define UCCLTOIFG_L                      (0x0080)
+#define UCCLTOIFG_0                      (0x0000)        /* No interrupt pending */
+#define UCCLTOIFG_1                      (0x0080)        /* Interrupt pending */
+#define UCCLTOIFG_1_L                    (0x0080)
+#define UCRXIFG1                         (0x0100)        /* eUSCI_B receive interrupt flag 1 */
+#define UCRXIFG1_H                       (0x0001)
+#define UCRXIFG1_0                       (0x0000)        /* No interrupt pending */
+#define UCRXIFG1_1                       (0x0100)        /* Interrupt pending */
+#define UCRXIFG1_1_H                     (0x0001)
+#define UCTXIFG1                         (0x0200)        /* eUSCI_B transmit interrupt flag 1 */
+#define UCTXIFG1_H                       (0x0002)
+#define UCTXIFG1_0                       (0x0000)        /* No interrupt pending */
+#define UCTXIFG1_1                       (0x0200)        /* Interrupt pending */
+#define UCTXIFG1_1_H                     (0x0002)
+#define UCRXIFG2                         (0x0400)        /* eUSCI_B receive interrupt flag 2 */
+#define UCRXIFG2_H                       (0x0004)
+#define UCRXIFG2_0                       (0x0000)        /* No interrupt pending */
+#define UCRXIFG2_1                       (0x0400)        /* Interrupt pending */
+#define UCRXIFG2_1_H                     (0x0004)
+#define UCTXIFG2                         (0x0800)        /* eUSCI_B transmit interrupt flag 2 */
+#define UCTXIFG2_H                       (0x0008)
+#define UCTXIFG2_0                       (0x0000)        /* No interrupt pending */
+#define UCTXIFG2_1                       (0x0800)        /* Interrupt pending */
+#define UCTXIFG2_1_H                     (0x0008)
+#define UCRXIFG3                         (0x1000)        /* eUSCI_B receive interrupt flag 3 */
+#define UCRXIFG3_H                       (0x0010)
+#define UCRXIFG3_0                       (0x0000)        /* No interrupt pending */
+#define UCRXIFG3_1                       (0x1000)        /* Interrupt pending */
+#define UCRXIFG3_1_H                     (0x0010)
+#define UCTXIFG3                         (0x2000)        /* eUSCI_B transmit interrupt flag 3 */
+#define UCTXIFG3_H                       (0x0020)
+#define UCTXIFG3_0                       (0x0000)        /* No interrupt pending */
+#define UCTXIFG3_1                       (0x2000)        /* Interrupt pending */
+#define UCTXIFG3_1_H                     (0x0020)
+#define UCBIT9IFG                        (0x4000)        /* Bit position 9 interrupt flag */
+#define UCBIT9IFG_H                      (0x0040)
+#define UCBIT9IFG_0                      (0x0000)        /* No interrupt pending */
+#define UCBIT9IFG_1                      (0x4000)        /* Interrupt pending */
+#define UCBIT9IFG_1_H                    (0x0040)
+
+/* UCB0IV Control Bits */
+#define UCIV_10                          (0x000a)        /* Interrupt Source: Slave 3 Data received; Interrupt Flag: 
+                                                            UCRXIFG3 */
+#define UCIV_10_L                        (0x000a)
+#define UCIV_12                          (0x000c)        /* Interrupt Source: Slave 3 Transmit buffer empty; Interrupt 
+                                                            Flag: UCTXIFG3 */
+#define UCIV_12_L                        (0x000c)
+#define UCIV_14                          (0x000e)        /* Interrupt Source: Slave 2 Data received; Interrupt Flag: 
+                                                            UCRXIFG2 */
+#define UCIV_14_L                        (0x000e)
+#define UCIV_16                          (0x0010)        /* Interrupt Source: Slave 2 Transmit buffer empty; Interrupt 
+                                                            Flag: UCTXIFG2 */
+#define UCIV_16_L                        (0x0010)
+#define UCIV_18                          (0x0012)        /* Interrupt Source: Slave 1 Data received; Interrupt Flag: 
+                                                            UCRXIFG1 */
+#define UCIV_18_L                        (0x0012)
+#define UCIV_20                          (0x0014)        /* Interrupt Source: Slave 1 Transmit buffer empty; Interrupt 
+                                                            Flag: UCTXIFG1 */
+#define UCIV_20_L                        (0x0014)
+#define UCIV_22                          (0x0016)        /* Interrupt Source: Data received; Interrupt Flag: UCRXIFG0 */
+#define UCIV_22_L                        (0x0016)
+#define UCIV_24                          (0x0018)        /* Interrupt Source: Transmit buffer empty; Interrupt Flag: 
+                                                            UCTXIFG0 */
+#define UCIV_24_L                        (0x0018)
+#define UCIV_26                          (0x001a)        /* Interrupt Source: Byte counter zero; Interrupt Flag: UCBCNTIFG */
+#define UCIV_26_L                        (0x001a)
+#define UCIV_28                          (0x001c)        /* Interrupt Source: Clock low timeout; Interrupt Flag: UCCLTOIFG */
+#define UCIV_28_L                        (0x001c)
+#define UCIV_30                          (0x001e)        /* Interrupt Source: Nineth bit position; Interrupt Flag: 
+                                                            UCBIT9IFG; Priority: Lowest */
+#define UCIV_30_L                        (0x001e)
+#define UCIV__UCALIFG                    (0x0002)        /* Interrupt Source: Arbitration lost; Interrupt Flag: UCALIFG; 
+                                                            Interrupt Priority: Highest */
+#define UCIV__UCALIFG_L                  (0x0002)
+#define UCIV__UCNACKIFG                  (0x0004)        /* Interrupt Source: Not acknowledgment; Interrupt Flag: 
+                                                            UCNACKIFG */
+#define UCIV__UCNACKIFG_L                (0x0004)
+#define UCIV__UCSTPIFG                   (0x0008)        /* Interrupt Source: Stop condition received; Interrupt Flag: 
+                                                            UCSTPIFG */
+#define UCIV__UCSTPIFG_L                 (0x0008)
+#define UCIV__UCRXIFG3                   (0x000a)        /* Interrupt Source: Slave 3 Data received; Interrupt Flag: 
+                                                            UCRXIFG3 */
+#define UCIV__UCRXIFG3_L                 (0x000a)
+#define UCIV__UCTXIFG3                   (0x000c)        /* Interrupt Source: Slave 3 Transmit buffer empty; Interrupt 
+                                                            Flag: UCTXIFG3 */
+#define UCIV__UCTXIFG3_L                 (0x000c)
+#define UCIV__UCRXIFG2                   (0x000e)        /* Interrupt Source: Slave 2 Data received; Interrupt Flag: 
+                                                            UCRXIFG2 */
+#define UCIV__UCRXIFG2_L                 (0x000e)
+#define UCIV__UCTXIFG2                   (0x0010)        /* Interrupt Source: Slave 2 Transmit buffer empty; Interrupt 
+                                                            Flag: UCTXIFG2 */
+#define UCIV__UCTXIFG2_L                 (0x0010)
+#define UCIV__UCRXIFG1                   (0x0012)        /* Interrupt Source: Slave 1 Data received; Interrupt Flag: 
+                                                            UCRXIFG1 */
+#define UCIV__UCRXIFG1_L                 (0x0012)
+#define UCIV__UCTXIFG1                   (0x0014)        /* Interrupt Source: Slave 1 Transmit buffer empty; Interrupt 
+                                                            Flag: UCTXIFG1 */
+#define UCIV__UCTXIFG1_L                 (0x0014)
+#define UCIV__UCRXIFG0                   (0x0016)        /* Interrupt Source: Data received; Interrupt Flag: UCRXIFG0 */
+#define UCIV__UCRXIFG0_L                 (0x0016)
+#define UCIV__UCTXIFG0                   (0x0018)        /* Interrupt Source: Transmit buffer empty; Interrupt Flag: 
+                                                            UCTXIFG0 */
+#define UCIV__UCTXIFG0_L                 (0x0018)
+#define UCIV__UCBCNTIFG                  (0x001a)        /* Interrupt Source: Byte counter zero; Interrupt Flag: UCBCNTIFG */
+#define UCIV__UCBCNTIFG_L                (0x001a)
+#define UCIV__UCCLTOIFG                  (0x001c)        /* Interrupt Source: Clock low timeout; Interrupt Flag: UCCLTOIFG */
+#define UCIV__UCCLTOIFG_L                (0x001c)
+#define UCIV__UCBIT9IFG                  (0x001e)        /* Interrupt Source: Nineth bit position; Interrupt Flag: 
+                                                            UCBIT9IFG; Priority: Lowest */
+#define UCIV__UCBIT9IFG_L                (0x001e)
+
