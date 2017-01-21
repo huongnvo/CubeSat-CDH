@@ -1,0 +1,139 @@
+#include "prototype.h"
+#ifndef __MSP430WARE_EUSCI_B_SPI_H__
+#define __MSP430WARE_EUSCI_B_SPI_H__
+
+#include "inc/hw_memmap.h"
+
+#ifdef __MSP430_HAS_EUSCI_Bx_
+
+void initialize()
+{
+	SPI.beginTransaction(SPISettings(SPI_SPEED), MSBFIRST, SPI_MODE0);
+	WriteInstruction_t setConfigMode;
+	setConfigMode.instruction = WRITE_INSTR;
+	setConfigMode.address = CANCTRL_REG; 
+	setConfigMode.data = CONFIG_MODE << 5;
+	SPI.transfer(setConfigMode, 3);
+
+	WriteInstruction_t setNormalMode;
+	setNormalMode.instruction = WRITE_INSTR;
+	setNormalMode.address = CANCTRL_REG;
+	setNormalMode.data = CONFIG_MODE << 5;
+	SPI.transfer(setNormalMode, 3);
+
+}
+
+
+void writeCAN(unsigned char data[8])
+{
+
+	// Is the CAN Bus available to start transmission?
+	
+	if (Tx.REQ.data != HIGH) {
+
+		WriteInstruction_t setTxREQ;
+		setTxREQ.instruction = WRITE_INSTR;
+		setTxREQ.address = TXBNCTRL_REG;
+		setTxREQ.data = HIGH;
+		SPI.transfer(setTxREQ, 3);	
+	}
+
+	else {
+
+		WriteInstruction_t setTxREQ;
+		setTxREQ.instruction = WRITE_INSTR;
+		setTxREQ.address = TXBNCTRL_REG;
+		setTxREQ.data = HIGH;
+		SPI.transfer(setTxREQ, 3);
+
+	}
+	// Is the CAN Bus available to start transmission?
+
+		if {( TXREQ = 0 || ABAT = 1 );
+
+			writeCAN(unsigned char data[8])
+
+			}
+
+		//Determine Highest Priority Message
+		else {
+
+		
+		}
+
+		//Write to register via SPI Command
+			WriteInstruction_t setTxREQ;
+			setTxREQ.instruction = WRITE_INSTR;
+		}
+	//Transmit Message
+
+			setTXREQ.instruction = TXBNCTRL_REG;
+			setTxREQ = 
+			SPI.transfer(setTREQ, 3);
+
+			//Send the SPI RTS Command  
+
+
+			//Set TXnRTS pin low
+
+
+		printf("Hello world ");
+
+
+
+	//Was the Message Transmitted Successfully?
+
+		// If yes, Clear TXREQ
+		// Does TXnIE = 1?
+			//If TXnIE = 1, Generate Interrupt
+
+			extern void EUSCI_B_SPI_enableInterrupt(uint16_t baseAddress,
+                                        uint8_t mask);
+
+			//If TXnIE != 1, Set TXnIF in CANTINF register
+
+			
+			//Go to start
+
+		// If no, Message error or Lost Arbitration?
+			//If Message error,
+			//Set TXERR
+			//MERRE = 1? in CANINTE Register
+				//If yes, Generate Interrupt
+				//If no Set MERRF in CANTINF Register
+
+	//Repeat to transmit another message?
+
+}
+
+void readCAN( unsigned char data[8]) 
+{
+
+	//Detect Start of Message
+
+	//Begin Loading Message into MAB
+
+	//Determine if Valid Messsage Received
+
+	//Generate Error Frame
+
+	//Meets a filter criteria for RXB0?
+
+	//Meets filter criteria for RXB1?
+		// if no, start over
+		// if yes
+
+			//Is Rx1IF = 0?
+
+				//If yes, move message into RXB1
+				//Set RX1IF = 1 in CANINTF reg.
+				//SET FILHIT <2:0> in RXB1CTRL register according to which filter criteria was met
+				// Yes or no, RX1IE = 1 in CANINTE register?
+
+
+
+
+	//
+
+
+}
